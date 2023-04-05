@@ -29,8 +29,7 @@
     <a href="#/zh-cn/">中文</a>
   </nav> -->
   <div id="app"></div>
-  
-  <div id="gitalk-container"></div>
+
   <script>
     window.$docsify = {
       // 用于设置文档标题，会显示在侧边栏顶部。有name存在的话可以用logo设置在侧边栏中出现的网站图标：
@@ -90,6 +89,7 @@
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify-copy-code/2.1.1/docsify-copy-code.min.js"></script>
   <!-- 图片放大缩小支持 -->
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/plugins/zoom-image.min.js"></script>
+
   
   <!-- bootcdn没有，jsdelivr失效，只能使用unpkg -->
   <!-- 分页导航 -->
@@ -114,14 +114,7 @@
         id: location.pathname,
         distractionFreeMode: false
     });
-    (function() {
-    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-      document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
-      return;
-    }
-    gitalk.render('gitalk-container');
-  })();
-
+    
   </script>
 </body>
 
