@@ -8,6 +8,19 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/vue.min.css">
+  <!-- 目前支持的主题如下：
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/vue.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/buble.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/dark.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/pure.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/dolphin.min.css">
+  -->
+  <!-- <link rel="stylesheet" href="css/sidebar.min.css"> -->
+  <!-- <link rel="stylesheet" href="css/sidebar-folder.min.css"> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+  <!-- GitTalk评论 -->
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 
 <body>
@@ -16,16 +29,20 @@
     <a href="#/zh-cn/">中文</a>
   </nav> -->
   <div id="app"></div>
- 
+
   <script>
     window.$docsify = {
-      name: '',
-      repo: '',
+      // 用于设置文档标题，会显示在侧边栏顶部。有name存在的话可以用logo设置在侧边栏中出现的网站图标：
+      name: 'docsify 学习',
+      // 配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件：
+      repo: 'https://github.com/qw-15316593586/docsify',
       // 开启侧边栏定制,加载_sidebar.md
       loadSidebar: true,
-      // 开启目录,最大层级为2
-      subMaxLevel: 2,
-      // 开启导航栏,加载_navbar.md
+      autoHeader: true,
+      // 开启目录,最大层级为3
+      subMaxLevel: 5,
+      sidebarDisplayLevel: 5, // 设置侧边栏显示级别
+      // 开启导航栏,加载_navbar.mds
       loadNavbar: true,
       // 开启封面,加载_coverpage.md
       // coverpage: true,
@@ -33,19 +50,71 @@
       coverpage: ['/', '/zh-cn/'],
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      // search: 'auto', // 默认值,或下面完整配置
+      // 完整配置参数
+      search: {
+        maxAge: 86400000,//过期时间,单位毫秒,默认一天
+        paths: [], // or 'auto'
+        placeholder: '请输入搜索关键字',
+        noData: '没有搜到呦!',
+        // depth: 2
+      },
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      },
+      copyCode: {
+        buttonText : '点击复制',
+        errorText  : '错误',
+        successText: '复制成功'
+      },
+      footer: {
+        copy: '<span>Docsify &copy; 2023</span>',
+        auth: 'qianwei',
+        pre: '<hr/>',
+        style: 'text-align: right;',
+        class: 'className'
       }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/docsify.min.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/plugins/emoji.min.js"></script>
-  <!-- 目前支持的主题如下所示
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css">
-   -->
+  <!-- 搜索 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/plugins/search.min.js"></script>
+  <!-- 拷贝文字内容 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/docsify-copy-code/2.1.1/docsify-copy-code.min.js"></script>
+  <!-- 图片放大缩小支持 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/plugins/zoom-image.min.js"></script>
+
+  
+  <!-- bootcdn没有，jsdelivr失效，只能使用unpkg -->
+  <!-- 分页导航 -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 字数插件 -->
+  <script src="//unpkg.com/docsify-count@1.1.0/dist/countable.min.js"></script>
+  <!-- 侧边栏扩展与折叠 -->
+  <!-- <script src="js/docsify-sidebar-collapse.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- 页脚信息 -->
+  <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+  <!-- GitTalk评论 -->
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    const gitalk = new Gitalk({
+        clientID: '40487b8962503d85158f',
+        clientSecret: '63159fd01e17f3d6af89d81a1a1e50625b3f5582',
+        repo: 'docsify',
+        owner: 'qw-15316593586',
+        admin: ['qw-15316593586'],
+        id: location.href,
+        distractionFreeMode: false
+    })
+  </script>
 </body>
 
 </html>

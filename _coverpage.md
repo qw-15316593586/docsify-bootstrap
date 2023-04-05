@@ -7,3 +7,12 @@
 - 众多主题
 
 [GitHub](https://github.com/docsifyjs/docsify/)
+
+
+<!-- 背景图片 -->
+
+<!-- ![](media/1.jpeg) -->
+
+<!-- 背景色 -->
+
+<!-- ![color](#f0f0f0) -->

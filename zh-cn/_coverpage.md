@@ -1,5 +1,5 @@
 <!-- 网站图标 -->
-![logo](_media/icon.jpg)
+![logo](../media/logo.png)
 
 # docsify <small>3.5</small>
 
@@ -12,7 +12,7 @@
 [GitHub](https://github.com/docsifyjs/docsify/)
 
 <!-- 背景图片 -->
-![](_media/玩家.png)
+<!-- ![](../media/2.jpeg) -->
 
 <!-- 背景色 -->
-![color](#f0f0f0)
+<!-- ![color](#f0f0f0) -->
