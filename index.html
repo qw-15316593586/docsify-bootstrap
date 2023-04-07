@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/pure.min.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/themes/dolphin.min.css">
   -->
-  <link rel="stylesheet" href="css/sidebar.min.css">
-  <link rel="stylesheet" href="css/sidebar-folder.min.css">
+  <!-- <link rel="stylesheet" href="css/sidebar.min.css"> -->
+  <!-- <link rel="stylesheet" href="css/sidebar-folder.min.css"> -->
+  <!-- 或下面，这个容易被墙 -->
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
   <!-- GitTalk评论 -->
   <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-  
+
 </head>
 
 <body>
@@ -34,22 +35,44 @@
 
   <script>
     window.$docsify = {
-      // 用于设置文档标题，会显示在侧边栏顶部。有name存在的话可以用logo设置在侧边栏中出现的网站图标：
+      logo: 'media/logo.png',
+      // 网站名称
       name: 'docsify 学习',
+      // name: '<span>docsify</span>',
       // 配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件：
       repo: 'https://github.com/qw-15316593586/docsify',
-      // 开启侧边栏定制,加载_sidebar.md
+      // 自定义网站的主页
+      homepage: 'home.md',
+      // 隐藏你的侧边栏
+      // hideSidebar:true,
+      // 开启侧边栏定制,加载_sidebar.md 或 loadSidebar: 'summary.md',
       loadSidebar: true,
+      // 开启导航栏,加载_navbar.md 或 loadNavbar: 'nav.md',
+      loadNavbar: true,
+      // 添加页眉，就是侧边栏每个路由标题，将自动添加到对应md文件的头部
       autoHeader: true,
+      // 当路由改变时，滚动到屏幕顶部。
+      // auto2top: true,
       // 开启目录,最大层级为3
       subMaxLevel: 5,
-      sidebarDisplayLevel: 5, // 设置侧边栏显示级别
-      // 开启导航栏,加载_navbar.mds
-      loadNavbar: true,
+      // 设置侧边栏显示级别
+      sidebarDisplayLevel: 5, 
+      // 导航栏将在较小的屏幕上与侧边栏合并。
+      mergeNavbar: true,
+      // 表情符号字符渲染
+      nativeEmoji: true,
+      //自定义404页面:
+      // notFoundPage: 'my404.md',
+      onlyCover: false,
       // 开启封面,加载_coverpage.md
       // coverpage: true,
       // 多封面
       coverpage: ['/', '/zh-cn/'],
+      // 多个封面和自定义文件名
+      // coverpage: {
+      //   '/': 'cover.md',
+      //   '/zh-cn/': 'cover.md',
+      // }
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
@@ -84,6 +107,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/docsify.min.js"></script>
+  <!-- Emoji -->
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/plugins/emoji.min.js"></script>
   <!-- 代码高亮 -->
   <script src="https://cdn.bootcdn.net/ajax/libs/prism/9000.0.1/components/prism-markdown.min.js"></script>
@@ -99,15 +123,14 @@
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify-copy-code/2.1.1/docsify-copy-code.min.js"></script>
   <!-- 图片放大缩小支持 -->
   <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.0/plugins/zoom-image.min.js"></script>
-
-
-  <!-- bootcdn没有，jsdelivr失效，只能使用unpkg -->
+  <!-- bootcdn没有，jsdelivr容易被墙，只能使用unpkg -->
   <!-- 分页导航 -->
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!-- 字数插件 -->
   <script src="//unpkg.com/docsify-count@1.1.0/dist/countable.min.js"></script>
   <!-- 侧边栏扩展与折叠 -->
-  <script src="js/docsify-sidebar-collapse.min.js"></script>
+  <!-- <script src="js/docsify-sidebar-collapse.min.js"></script> -->
+  <!-- 或下面，这个容易被墙 -->
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script> -->
   <!-- 页脚信息 -->
   <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
@@ -125,16 +148,17 @@
       distractionFreeMode: false
     });
   </script>
+  <!-- 阅读全文 -->
   <script src="https://readmore.openwrite.cn/js/readmore.js" type="text/javascript"></script>
   <script>
     window.onload = function () {
       window.btw = new BTWPlugin();
       window.btw.init({
         id: 'main',
-        blogId: '23732-1677671779712-470',
-        name: '艾小仙',
-        qrcode: 'http://cdn.aixiaoxian.vip/blog/008eGmZEgy1gmu35521svj30b40b4ae4.jpg',
-        keyword: 'blog',
+        blogId: '31398-1680846526455-339',
+        name: 'WEB技术交流',
+        qrcode: 'http://bian2013.com/media/images/qrcode.original.jpg',
+        keyword: 'qianwei',
       });
     };
     if (("onhashchange" in window) && ((typeof document.documentMode === "undefined") || document.documentMode == 8)) {
